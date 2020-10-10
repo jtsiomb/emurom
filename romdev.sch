@@ -1660,20 +1660,6 @@ Wire Wire Line
 	4900 3300 5000 3300
 Wire Wire Line
 	5000 3300 5000 3200
-Wire Wire Line
-	6700 3050 6700 3350
-Wire Wire Line
-	6700 3350 7200 3350
-Connection ~ 7200 3350
-Wire Wire Line
-	6300 4850 6300 5150
-Wire Wire Line
-	6300 5150 5800 5150
-Connection ~ 5800 5150
-Wire Wire Line
-	6050 6550 6050 6850
-Wire Wire Line
-	6050 6850 5550 6850
 Connection ~ 5550 6850
 Wire Wire Line
 	4400 5950 4650 5950
@@ -1887,7 +1873,6 @@ Wire Wire Line
 	8750 1100 9000 1100
 Text Notes 7750 650  0    50   ~ 0
 bypass capacitors
-Connection ~ 6050 6850
 NoConn ~ 1900 5300
 Text Label 2800 3050 0    50   ~ 0
 ~SYSRST
@@ -1919,8 +1904,6 @@ F 3 "~" H 7200 5000 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6250 6450 6050 6450
-Wire Wire Line
-	6400 6850 6050 6850
 Wire Wire Line
 	6050 6250 6400 6250
 Wire Wire Line
@@ -2051,6 +2034,16 @@ Wire Wire Line
 	3350 3450 2800 3450
 Wire Wire Line
 	3350 3450 3350 5200
+Wire Wire Line
+	5550 6850 6400 6850
+Wire Wire Line
+	6300 4850 6300 4750
+Connection ~ 6300 4750
+Wire Wire Line
+	6050 6550 6050 6450
+Connection ~ 6050 6450
+Wire Wire Line
+	6700 3050 6700 2950
 Wire Bus Line
 	8100 1500 8100 2650
 Wire Bus Line
@@ -2065,4 +2058,5 @@ Wire Bus Line
 	8650 2100 8650 6450
 Wire Bus Line
 	4750 1250 4750 6150
+Connection ~ 6700 2950
 $EndSCHEMATC

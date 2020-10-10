@@ -54,6 +54,7 @@ int have_input(void)
 static int uart_send_char(char c, FILE *fp)
 {
 	/*int next;*/
+	if(c == '\n') uart_send_char('\r', fp);
 
 	while((UCSR0A & (1 << UDRE0)) == 0);
 	UDR0 = (unsigned char)c;

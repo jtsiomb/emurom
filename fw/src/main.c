@@ -34,6 +34,7 @@ static void end_prog(void);
 static void write_ram(uint16_t addr, uint8_t val);
 static uint8_t read_ram(uint16_t addr);
 static void set_data_bus(unsigned char val);
+static void release_data_bus(void);
 static void set_addr_bus(uint16_t addr);
 static void sys_reset(void);
 static inline void iodelay(void);
@@ -48,12 +49,12 @@ static unsigned char inp_cidx;
 
 int main(void)
 {
-	/* SPI (SS/MOSI/SCK) are outputs, as are the low 2 data bus bits */
-	DDRB = PB_SS | PB_MOSI | PB_SCK | 3;
+	/* SPI (SS/MOSI/SCK) are outputs */
+	DDRB = PB_SS | PB_MOSI | PB_SCK;
 	PORTB = PB_SS;	/* drive SS high when not in programming mode */
 	DDRC = 0xff;	/* control signals are all outputs */
 	PORTC = PC_CS | PC_WE | PC_OE | PC_SYSRST;
-	DDRD = 0xff;	/* always drive the (high bits of the) data bus */
+	DDRD = 0;	/* tri-state the data bus by default (high 6 bits, low 2 are in DDRB) */
 	PORTD = 0;
 
 	/* disable all pullups */
@@ -184,6 +185,7 @@ static void write_ram(uint16_t addr, uint8_t val)
 	iodelay();
 	PORTC |= PC_CS;
 	PORTC |= PC_WE;
+	release_data_bus();
 }
 
 static uint8_t read_ram(uint16_t addr)
@@ -193,15 +195,24 @@ static uint8_t read_ram(uint16_t addr)
 	PORTC |= PC_WE;
 	PORTC &= ~(PC_CS | PC_OE);
 	iodelay();
-	val = (PORTD & 0xfe) | (PORTB & 3);
+	val = (PIND & 0xfc) | (PINB & 3);
 	PORTC |= PC_CS | PC_OE;
 	return val;
 }
 
 static void set_data_bus(unsigned char val)
 {
-	PORTB = (PORTB & 0xfe) | (val & 3);
-	PORTC = val;
+	/* drive the data bus */
+	DDRD = 0xff;
+	DDRB |= 3;
+	PORTB = (PORTB & 0xfc) | (val & 3);
+	PORTD = val;
+}
+
+static void release_data_bus(void)
+{
+	DDRD = 0;
+	DDRB &= 0xfc;
 }
 
 static void set_addr_bus(uint16_t addr)
