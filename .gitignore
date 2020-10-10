@@ -1,0 +1,15 @@
+*.swp
+*.bak
+*.kicad_pcb-bak
+*.csv
+*.zip
+*.o
+*.eep
+*.hex
+*.map
+*.sch-bak
+*.pdf
+*.bck
+*.net
+gerber
+fw/romdev
