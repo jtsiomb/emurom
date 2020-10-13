@@ -1543,10 +1543,6 @@ Wire Wire Line
 Text Label 2800 2550 0    50   ~ 0
 PGM
 Wire Wire Line
-	6700 2950 6500 2950
-Text Label 6500 2950 0    50   ~ 0
-PGM
-Wire Wire Line
 	6500 4750 6300 4750
 Text Label 6300 4750 0    50   ~ 0
 PGM
@@ -2044,6 +2040,67 @@ Wire Wire Line
 Connection ~ 6050 6450
 Wire Wire Line
 	6700 3050 6700 2950
+$Comp
+L Diode:1N4148 D3
+U 1 1 5F8C7D7E
+P 6250 3300
+F 0 "D3" V 6350 3150 50  0000 L CNN
+F 1 "1N4148" H 6000 3200 50  0000 L CNN
+F 2 "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6250 3125 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 6250 3300 50  0001 C CNN
+	1    6250 3300
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:1N4148 D4
+U 1 1 5F89552F
+P 6450 3300
+F 0 "D4" V 6550 3300 50  0000 L CNN
+F 1 "1N4148" H 6200 3200 50  0000 L CNN
+F 2 "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6450 3125 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 6450 3300 50  0001 C CNN
+	1    6450 3300
+	0    1    1    0   
+$EndComp
+Connection ~ 6700 3050
+Text Label 6550 3550 0    50   ~ 0
+~SYSCS
+Text Label 6550 3650 0    50   ~ 0
+~SYSOE
+Wire Wire Line
+	6800 3550 6450 3550
+Wire Wire Line
+	6450 3550 6450 3450
+Wire Wire Line
+	6800 3650 6250 3650
+Wire Wire Line
+	6250 3650 6250 3450
+Wire Wire Line
+	6250 3150 6250 3050
+Wire Wire Line
+	6250 3050 6450 3050
+Wire Wire Line
+	6450 3150 6450 3050
+Connection ~ 6450 3050
+Wire Wire Line
+	6450 3050 6700 3050
+Wire Wire Line
+	6700 3350 6700 3050
+$Comp
+L Device:R R8
+U 1 1 5FB4A123
+P 6950 3350
+F 0 "R8" V 7050 3350 50  0000 C CNN
+F 1 "4K7" V 6950 3350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6880 3350 50  0001 C CNN
+F 3 "~" H 6950 3350 50  0001 C CNN
+	1    6950 3350
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	6800 3350 6700 3350
+Wire Wire Line
+	7100 3350 7200 3350
 Wire Bus Line
 	8100 1500 8100 2650
 Wire Bus Line
@@ -2058,5 +2115,5 @@ Wire Bus Line
 	8650 2100 8650 6450
 Wire Bus Line
 	4750 1250 4750 6150
-Connection ~ 6700 2950
+Connection ~ 7200 3350
 $EndSCHEMATC

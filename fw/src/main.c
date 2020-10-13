@@ -169,7 +169,11 @@ static void start_prog(void)
 
 static void end_prog(void)
 {
-	/* PGM low and return reset high */
+	/* make extra sure we don't drive the data bus */
+	release_data_bus();
+
+	/* PGM low and return reset and SS high */
+	PORTB |= PB_SS;
 	PORTC &= ~PC_PGM;
 	PORTC |= PC_SYSRST;
 
