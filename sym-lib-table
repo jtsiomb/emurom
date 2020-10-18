@@ -1,3 +1,3 @@
 (sym_lib_table
-  (lib (name romdev)(type Legacy)(uri ${KIPRJMOD}/romdev.lib)(options "")(descr ""))
+  (lib (name emurom)(type Legacy)(uri ${KIPRJMOD}/emurom.lib)(options "")(descr ""))
 )

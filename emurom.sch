@@ -69,7 +69,7 @@ F 3 "~" H 1300 2350 50  0001 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L romdev:sram_um61512ak U6
+L emurom:sram_um61512ak U6
 U 1 1 5EC358D5
 P 5550 2150
 F 0 "U6" H 5650 3250 60  0000 C CNN
@@ -91,7 +91,7 @@ F 3 "http://www.ti.com/lit/gpn/sn74ls595" H 4050 1550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L romdev:mcp2221 U2
+L emurom:mcp2221 U2
 U 1 1 5EC41AB3
 P 2700 5500
 F 0 "U2" H 2800 6000 50  0000 C CNN
@@ -317,7 +317,7 @@ Wire Wire Line
 Wire Wire Line
 	2800 1750 3150 1750
 $Comp
-L romdev:ATmega328P-AU U1
+L emurom:ATmega328P-AU U1
 U 1 1 5ED09330
 P 2200 2950
 F 0 "U1" H 2350 1500 50  0000 C CNN
@@ -1132,12 +1132,12 @@ Text Label 2000 7100 0    50   ~ 0
 Text Label 4750 5100 1    50   ~ 0
 A[0..15]
 $Comp
-L romdev:conn32k U11
+L emurom:conn32k U11
 U 1 1 5FAB03BB
 P 9500 5050
 F 0 "U11" H 9600 5950 50  0000 C CNN
 F 1 "conn32k" V 9500 5100 50  0000 C CNN
-F 2 "romdev:conn32k" H 9500 5050 50  0001 C CNN
+F 2 "emurom:conn32k" H 9500 5050 50  0001 C CNN
 F 3 "" H 9500 5050 50  0001 C CNN
 	1    9500 5050
 	1    0    0    -1  
@@ -1149,12 +1149,12 @@ F0 "dipconn" 50
 F1 "dipconn.sch" 50
 $EndSheet
 $Comp
-L romdev:conn2k U10
+L emurom:conn2k U10
 U 1 1 5FBD48AD
 P 9500 2600
 F 0 "U10" H 9600 3350 50  0000 C CNN
 F 1 "conn2k" V 9500 2600 50  0000 C CNN
-F 2 "romdev:conn2k" H 9500 2450 50  0001 C CNN
+F 2 "emurom:conn2k" H 9500 2450 50  0001 C CNN
 F 3 "" H 9500 2450 50  0001 C CNN
 	1    9500 2600
 	1    0    0    -1  

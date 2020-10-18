@@ -12,5 +12,5 @@
 *.bck
 *.net
 gerber
-fw/romdev
+fw/emurom
 emurom/emurom

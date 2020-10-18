@@ -1,3 +1,3 @@
 (fp_lib_table
-  (lib (name romdev)(type KiCad)(uri ${KIPRJMOD}/romdev.pretty)(options "")(descr ""))
+  (lib (name emurom)(type KiCad)(uri ${KIPRJMOD}/emurom.pretty)(options "")(descr ""))
 )

@@ -21,7 +21,7 @@ AR Path="/5FADB97D" Ref="J?"  Part="1"
 AR Path="/5FAB6BE4/5FADB97D" Ref="J5"  Part="1" 
 F 0 "J5" H 7750 3367 50  0000 C CNN
 F 1 "idc32k" H 7750 3276 50  0000 C CNN
-F 2 "romdev:conn32k" H 7700 2550 50  0001 C CNN
+F 2 "emurom:conn32k" H 7700 2550 50  0001 C CNN
 F 3 "~" H 7700 2550 50  0001 C CNN
 	1    7700 2550
 	1    0    0    -1  
@@ -257,7 +257,7 @@ U 1 1 5FADD307
 P 4200 2650
 F 0 "J3" H 4250 3367 50  0000 C CNN
 F 1 "idc2k" H 4250 3276 50  0000 C CNN
-F 2 "romdev:conn2k" H 4200 2650 50  0001 C CNN
+F 2 "emurom:conn2k" H 4200 2650 50  0001 C CNN
 F 3 "~" H 4200 2650 50  0001 C CNN
 	1    4200 2650
 	1    0    0    -1  

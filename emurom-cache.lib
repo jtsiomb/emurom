@@ -486,11 +486,11 @@ X VCC 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# romdev_ATmega328P-AU
+# emurom_ATmega328P-AU
 #
-DEF romdev_ATmega328P-AU U 0 20 Y Y 1 F N
+DEF emurom_ATmega328P-AU U 0 20 Y Y 1 F N
 F0 "U" -500 1450 50 H V L BNN
-F1 "romdev_ATmega328P-AU" 100 -1450 50 H V L TNN
+F1 "emurom_ATmega328P-AU" 100 -1450 50 H V L TNN
 F2 "Package_QFP:TQFP-32_7x7mm_P0.8mm" 0 100 50 H I C CIN
 F3 "" 0 0 50 H I C CNN
 ALIAS ATmega48P-20AU ATmega48A-AU ATmega48PA-AU ATmega88PV-10AU ATmega88P-20AU ATmega88A-AU ATmega88PA-AU ATmega168PV-10AU ATmega168P-20AU ATmega168A-AU ATmega168PA-AU ATmega328-AU ATmega328P-AU
@@ -534,11 +534,11 @@ X PD5 9 600 -1000 100 L 50 50 1 1 B
 ENDDRAW
 ENDDEF
 #
-# romdev_conn2k
+# emurom_conn2k
 #
-DEF romdev_conn2k U 0 40 Y Y 1 F N
+DEF emurom_conn2k U 0 40 Y Y 1 F N
 F0 "U" 100 -750 50 H V C CNN
-F1 "romdev_conn2k" -250 -750 50 H V C CNN
+F1 "emurom_conn2k" -250 -750 50 H V C CNN
 F2 "" 0 -150 50 H I C CNN
 F3 "" 0 -150 50 H I C CNN
 DRAW
@@ -570,11 +570,11 @@ X D0 9 450 600 200 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# romdev_conn32k
+# emurom_conn32k
 #
-DEF romdev_conn32k U 0 40 Y Y 1 F N
+DEF emurom_conn32k U 0 40 Y Y 1 F N
 F0 "U" 100 -800 50 H V C CNN
-F1 "romdev_conn32k" -250 -800 50 H V C CNN
+F1 "emurom_conn32k" -250 -800 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -610,11 +610,11 @@ X A1 9 -450 650 200 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# romdev_mcp2221
+# emurom_mcp2221
 #
-DEF romdev_mcp2221 U 0 40 Y Y 1 F N
+DEF emurom_mcp2221 U 0 40 Y Y 1 F N
 F0 "U" 100 -500 50 H V C CNN
-F1 "romdev_mcp2221" -250 -500 50 H V C CNN
+F1 "emurom_mcp2221" -250 -500 50 H V C CNN
 F2 "" 0 -300 50 H I C CNN
 F3 "" 0 -300 50 H I C CNN
 DRAW
@@ -636,11 +636,11 @@ X SDA 9 -500 100 200 R 50 50 1 1 C
 ENDDRAW
 ENDDEF
 #
-# romdev_sram_um61512ak
+# emurom_sram_um61512ak
 #
-DEF romdev_sram_um61512ak U 0 40 Y Y 1 F N
+DEF emurom_sram_um61512ak U 0 40 Y Y 1 F N
 F0 "U" 100 -1200 60 H V C CNN
-F1 "romdev_sram_um61512ak" 0 -50 60 V V C CNN
+F1 "emurom_sram_um61512ak" 0 -50 60 V V C CNN
 F2 "" -100 -800 60 H V C CNN
 F3 "" -100 -800 60 H V C CNN
 DRAW

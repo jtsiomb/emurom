@@ -1,6 +1,6 @@
 src = $(wildcard src/*.c)
 obj = $(src:.c=.o)
-bin = romdev
+bin = emurom
 hex = $(bin).hex
 eep = $(bin).eep
 
