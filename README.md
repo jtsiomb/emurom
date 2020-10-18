@@ -49,7 +49,7 @@ Latest release (emurom rev2):
  - emurom website: http://nuclear.mutantstargoat.com/hw/emurom/release/emurom-rev2.tar.gz
  - github mirror: https://github.com/jtsiomb/emurom/releases/download/v2/emurom-rev2.tar.gz
 
-Bill of Materials
+Bill of materials
 -----------------
 Emurom rev2 BOM:
 
