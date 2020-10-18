@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <util/delay.h>
 #include "serial.h"
 
 /* pin assignments
@@ -33,6 +34,7 @@ static void start_prog(void);
 static void end_prog(void);
 static void write_ram(uint16_t addr, uint8_t val);
 static uint8_t read_ram(uint16_t addr);
+static void dbg_setup_read(uint16_t addr);
 static void set_data_bus(unsigned char val);
 static void release_data_bus(void);
 static void set_addr_bus(uint16_t addr);
@@ -142,6 +144,25 @@ static void proc_cmd(char *input)
 		printf("OK %d\n", (int)data);
 		break;
 
+	case 'R':
+		if(!progmode) {
+			puts("ERR not in programming mode");
+			break;
+		}
+		dbg_setup_read(addr);
+		printf("OK set up read from %x\n", (unsigned int)addr);
+		break;
+
+	case 'A':
+		if(!progmode) {
+			puts("ERR not in programming mode");
+			break;
+		}
+		addr = strtol(input + 1, &endp, 0);
+		set_addr_bus(addr);
+		printf("OK DBG address %x\n", (unsigned int)addr);
+		break;
+
 	case '?':
 		puts("OK command help");
 		puts(" e 0|1: turn echo on/off");
@@ -151,6 +172,7 @@ static void proc_cmd(char *input)
 		puts(" w <data>: store data byte and increment address (0-255)");
 		puts(" r: read data byte and increment address");
 		puts(" ?: print command help");
+		printf("Currently in %s mode\n", progmode ? "programming" : "boot");
 		break;
 
 	default:
@@ -175,7 +197,7 @@ static void end_prog(void)
 	/* PGM low and return reset and SS high */
 	PORTB |= PB_SS;
 	PORTC &= ~PC_PGM;
-	PORTC |= PC_SYSRST;
+	PORTC |= PC_SYSRST | PC_CS | PC_OE;
 
 	progmode = 0;
 }
@@ -204,6 +226,14 @@ static uint8_t read_ram(uint16_t addr)
 	return val;
 }
 
+static void dbg_setup_read(uint16_t addr)
+{
+	set_addr_bus(addr);
+	PORTC |= PC_WE;
+	PORTC &= ~(PC_CS | PC_OE);
+}
+
+
 static void set_data_bus(unsigned char val)
 {
 	/* drive the data bus */
@@ -217,14 +247,17 @@ static void release_data_bus(void)
 {
 	DDRD = 0;
 	DDRB &= 0xfc;
+
+	PORTD = 0;
+	PORTB &= 0xfc;
 }
 
 static void set_addr_bus(uint16_t addr)
 {
 	PORTB &= ~PB_SS;
-	SPDR = (uint8_t)addr;
-	while(!(SPSR & (1 << SPIF)));
 	SPDR = (uint8_t)(addr >> 8);
+	while(!(SPSR & (1 << SPIF)));
+	SPDR = (uint8_t)addr;
 	while(!(SPSR & (1 << SPIF)));
 
 	PORTB |= PB_SS;
@@ -235,7 +268,7 @@ static void set_addr_bus(uint16_t addr)
 static void sys_reset(void)
 {
 	PORTC &= ~PC_SYSRST;
-	iodelay();
+	_delay_ms(500);
 	PORTC |= PC_SYSRST;
 }
 
