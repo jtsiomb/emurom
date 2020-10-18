@@ -5,11 +5,11 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 2
 Title "ROM development board"
-Date "2020-05-18"
-Rev "1"
+Date "2020-10-18"
+Rev "2"
 Comp ""
 Comment1 ""
-Comment2 ""
+Comment2 "https://github.com/jtsiomb/emurom"
 Comment3 "License: Creative Commons Attribution Share-Alike (CC BY-SA)"
 Comment4 "Copyright (C) 2020 John Tsiombikas <nuclear@member.fsf.org>"
 $EndDescr
@@ -2101,6 +2101,7 @@ Wire Wire Line
 	6800 3350 6700 3350
 Wire Wire Line
 	7100 3350 7200 3350
+Connection ~ 7200 3350
 Wire Bus Line
 	8100 1500 8100 2650
 Wire Bus Line
@@ -2115,5 +2116,4 @@ Wire Bus Line
 	8650 2100 8650 6450
 Wire Bus Line
 	4750 1250 4750 6150
-Connection ~ 7200 3350
 $EndSCHEMATC

@@ -18,6 +18,10 @@ microcontroller is located under `fw`, while in the `emurom` subdirectory, there
 is a UNIX program which can be used to upload a ROM image to the device, simply
 by running it with the name of the ROM image as a command line argument.
 
+ - Project website: http://nuclear.mutantstargoat.com/hw/emurom
+ - Git repository: https://github.com/jtsiomb/emurom
+ - Schematic (PDF): http://nuclear.mutantstargoat.com/hw/emurom/emurom-schematic.pdf
+
 License
 -------
 Copyright (C) 2020 John Tsiombikas <nuclear@member.fsf.org>
