@@ -1,3 +1,5 @@
 (sym_lib_table
-  (lib (name emurom)(type Legacy)(uri ${KIPRJMOD}/emurom.lib)(options "")(descr ""))
+  (version 7)
+  (lib (name "emurom")(type "Legacy")(uri "${KIPRJMOD}/emurom.lib")(options "")(descr ""))
+  (lib (name "emurom-rescue")(type "KiCad")(uri "${KIPRJMOD}/emurom-rescue.kicad_sym")(options "")(descr ""))
 )

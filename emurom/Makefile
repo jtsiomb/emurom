@@ -15,7 +15,7 @@ clean:
 
 .PHONY: install
 install:
-	mkdir $(DESTDIR)$(PREFIX)/bin
+	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp $(bin) $(DESTDIR)$(PREFIX)/bin/$(bin)
 
 .PHONY: uninstall
